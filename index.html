@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Application</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <i></i>
+            <h1>QuizZone</h1>
+            <p>Test your knowledge!</p>
+        </header>
+
+        <!-- Start Screen -->
+        <div id="start-screen" class="screen active">
+            <div class="start-content">
+                <h2>Ready to Begin?</h2>
+                <p>Test your skills with our interactive quiz</p>
+                <div class="quiz-info">
+                    <div class="info-item">
+                        <span class="info-label">Questions:</span>
+                        <span class="info-value">10</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Time per question:</span>
+                        <span class="info-value">30 seconds</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Topics:</span>
+                        <span class="info-value">General Knowledge</span>
+                    </div>
+                </div>
+                <button id="start-btn" class="btn btn-primary">Start Quiz</button>
+            </div>
+        </div>
+
+        <!-- Quiz Screen -->
+        <div id="quiz-screen" class="screen">
+            <div class="quiz-header">
+                <div class="progress-container">
+                    <div class="progress-text">
+                        Question <span id="current-question">1</span> of <span id="total-questions">10</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div id="progress-fill" class="progress-fill"></div>
+                    </div>
+                </div>
+                <div class="timer-container">
+                    <div class="timer-text">Time Left:</div>
+                    <div id="timer" class="timer">30s</div>
+                </div>
+            </div>
+
+            <div id="quiz-content">
+                <div id="question-container">
+                    <h2 id="question">Loading question...</h2>
+                    <div id="options-container" class="options-grid">
+                        <!-- Options will be inserted here -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="quiz-footer">
+                <button id="prev-btn" class="btn btn-secondary" disabled>Previous</button>
+                <button id="next-btn" class="btn btn-primary">Next</button>
+            </div>
+        </div>
+
+        <!-- Results Screen -->
+        <div id="results-screen" class="screen">
+            <div class="results-content">
+                <h2>Quiz Complete!</h2>
+                <div class="score-circle">
+                    <div class="score-inner">
+                        <span id="final-score">0</span>
+                        <span>/10</span>
+                    </div>
+                </div>
+                <div class="results-details">
+                    <div class="result-item">
+                        <span class="result-label">Correct Answers:</span>
+                        <span id="correct-count" class="result-value correct">0</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Incorrect Answers:</span>
+                        <span id="incorrect-count" class="result-value incorrect">0</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Time Taken:</span>
+                        <span id="time-taken" class="result-value">0:00</span>
+                    </div>
+                </div>
+                <div class="review-section">
+                    <h3>Review Answers</h3>
+                    <div id="answers-review" class="answers-grid">
+                        <!-- Review items will be inserted here -->
+                    </div>
+                </div>
+                <div class="results-actions">
+                    <button id="restart-btn" class="btn btn-primary">Restart Quiz</button>
+                    <button id="new-quiz-btn" class="btn btn-secondary">New Quiz</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
